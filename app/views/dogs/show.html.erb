@@ -1,0 +1,14 @@
+<h1> Showing details for <%= @dog.name %>
+
+<h3>Breed: <%= @dog.breed %></h3>
+<h3>Age: <%= @dog.age %></h3>
+
+<%= @dog.name %> has the following owners:
+
+<ul>
+
+<% Employee.all.select {|ee| ee.dog_id == @dog.id}.each do |ee| %>
+    <%= ee.name %>
+<% end %>
+
+</ul>
